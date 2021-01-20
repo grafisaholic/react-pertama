@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import Table from './Table'
 import Form from './Form'
+import Api from './Api'
+import Navbar from './Navbar'
 class App extends Component {
   state = {
     jobs : [
@@ -44,8 +46,10 @@ class App extends Component {
 
     return (
       <div className="container">
+        <Navbar />
         <Table jobData={jobs} removeJob={this.removeJob} />
         <Form handleSubmit={this.handleSubmit} />
+        <Api />
       </div>
     )
   }
