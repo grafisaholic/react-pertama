@@ -1,58 +1,32 @@
-import React, {Component} from 'react'
-import Table from './Table'
-import Form from './Form'
-import Api from './Api'
-import Navbar from './Navbar'
+import React, {Component} from 'react';
+import {
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom';
+import Navbar from './Component/learn-1/Navbar';
+import day1 from './Views/day1/index';
+import day2 from './Views/day2/index';
+import day3 from './Views/day3/index';
+import day4 from './Views/day4/index';
+// import day5 from './Views/day5/index';
 class App extends Component {
-  state = {
-    jobs : [
-      {
-        job: 'Progammer',
-        salary: '50.000.000'
-      },
-      {
-        job: 'Bakul Bakso',
-        salary: '1.000.000'
-      },
-      {
-        job: 'Bartender',
-        salary: '25.000.000'
-      },
-      {
-        job: 'Atlet',
-        salary: '20.000.000'
-      }
-    ]
-  }
-
-  removeJob = (index) => {
-    const {jobs} = this.state
-
-    this.setState({
-      jobs: jobs.filter((r, i) => {
-        return i !== index
-      })
-    })
-  }
-
-  // HANDLER SUBMIT FORM
-  handleSubmit = (jobs) => {
-    const jobState = this.state.jobs
-    this.setState({jobs: [...jobState, jobs] })
-  }
-
   render () {
-    const {jobs} = this.state
-
     return (
-      <div className="container">
+      <main>
         <Navbar />
-        <Table jobData={jobs} removeJob={this.removeJob} />
-        <Form handleSubmit={this.handleSubmit} />
-        <Api />
-      </div>
-    )
-  }
-}
+
+        <Switch>
+          <Route path='/day-1' component={day1} />
+          <Route path="/day-2" component={day2} />
+          <Route path="/day-3" component={day3} />
+          <Route path="/day-4" component={day4} />
+          {/* <Route path="/day-5" component={day5} /> */}
+          <Redirect from='/' to="/day-1"/>
+        </Switch>
+      </main>
+    );
+  };
+};
 
 export default App
