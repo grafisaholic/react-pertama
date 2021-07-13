@@ -33,7 +33,6 @@ function NewsFeed() {
       try {
         let respon = await fetch(`${endpoint}&page=${page}`)
         let result = await respon.json();
-
         setNews(current => {
           return (
             {
