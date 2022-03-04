@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React from 'react';
 import {
   Route,
   Switch,
@@ -6,29 +6,25 @@ import {
 } from 'react-router-dom';
 
 import Navbar from './Component/learn-1/Navbar';
-import day1 from './Views/day1/index';
-import day2 from './Views/day2/index';
-import day3 from './Views/day3/index';
-import day4 from './Views/day4/index';
-import day5 from './Views/day5/index';
-import Login from './Views/Login';
+import day1 from './Views/day1';
+import day2 from './Views/day2';
+import day3 from './Views/day3';
+import day4 from './Views/day4';
+import day5 from './Views/day5';
+import day6 from './Views/day6';
 
 function App() {
-  const [token, setToken] = useState()
-
-  // if (!token)
-  //   return <Login setToken={setToken} />
 
   return (
     <main>
       <Navbar />
-
       <Switch>
         <Route path='/day-1' component={day1} />
         <Route path="/day-2" component={day2} />
         <Route path="/day-3" component={day3} />
         <Route path="/day-4" component={day4} />
         <Route path="/day-5" component={day5} />
+        <Route path="/day-6" component={day6} />
         <Redirect from='/' to="/day-1" />
       </Switch>
     </main>

@@ -1,38 +1,38 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {
   Collapse,
   Navbar,
-  NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink,
   NavbarText
-} from 'reactstrap'
+} from 'reactstrap';
+import { NavLink as Link } from 'react-router-dom'
 
-const NavbarHeader = (props) => {
-  const [isOpen, setIsOpen] = useState(false)
-  const toggle = () => setIsOpen(!isOpen)
 
+const NavbarHeader = () => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <Collapse isOpen={isOpen} navbar>
+        <Collapse navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/day-1">Learn Day 1</NavLink>
+              <NavLink to="/day-1" tag={Link}>Day 1</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/day-2">Learn Day 2</NavLink>
+              <NavLink to="/day-2" tag={Link}>Day 2</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/day-3">Learn Day 3</NavLink>
+              <NavLink to="/day-3" tag={Link}>Day 3</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/day-4">Learn Day 4</NavLink>
+              <NavLink to="/day-4" tag={Link}>Day 4</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/day-5">Learn Day 5</NavLink>
+              <NavLink to="/day-5" tag={Link}>Day 5</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/day-6" tag={Link}>Day 6</NavLink>
             </NavItem>
           </Nav>
           <NavbarText>Simple Text</NavbarText>

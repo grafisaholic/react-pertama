@@ -15,17 +15,21 @@ function App() {
   const [newTask, setNewTask] = useState([])
   const [filter, setFilter] = useState(queryFilter)
 
-  useEffect(async () => {
-    let param = Object.entries(filter).map(([key, val]) => `${key}=${val}`).join('&')
-
-    try {
-      let request = await fetch(`${endpoint}?${param}`)
-      let result = await request.json();
-      
-      setTask(result.data)
-    } catch (err) {
-      console.log(err)
+  useEffect(() => {
+    const fetchTodo = async () => {
+      let param = Object.entries(filter).map(([key, val]) => `${key}=${val}`).join('&')
+  
+      try {
+        let request = await fetch(`${endpoint}?${param}`)
+        let result = await request.json();
+        
+        setTask(result.data)
+      } catch (err) {
+        console.log(err)
+      }
     }
+
+    fetchTodo()
   }, [newTask, filter])
 
   // submit

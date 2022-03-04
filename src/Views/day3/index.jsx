@@ -44,7 +44,7 @@ function NewsFeed() {
           )
         });
         
-        if (result.status != 'ok') throw new Error('error');
+        if (result.status !== 'ok') throw new Error('error');
       } catch (error) {
         setError(true);
       };

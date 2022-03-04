@@ -51,23 +51,23 @@ function Day2() {
     <div className="container">
       <div className="container" >
         <p>
-          <button onClick={handleSubscribe }>Subscribe</button>
-          <span>{JSON.stringify(state.subscribe)}</span>
+          <button className='btn btn-info' onClick={handleSubscribe }>Subscribe</button>
+          <span className='ml-2'>{JSON.stringify(state.subscribe)}</span>
         </p>
 
         <p>
-          <button onClick={handleLike}>Like</button>
-          <span>{like}</span>
+          <button className='btn btn-info' onClick={handleLike}>Like</button>
+          <span className='ml-2'>{like}</span>
         </p>
 
         <p>
-          <button onClick={handleDislike}>Dislike</button>
-          <span>{dislike}</span>
+          <button className='btn btn-info' onClick={handleDislike}>Dislike</button>
+          <span className='ml-2'>{dislike}</span>
         </p>
 
         <p>
-          <button onClick={handleTripleLike}>Tripple Like</button>
-          <span>{like}</span>
+          <button className='btn btn-info' onClick={handleTripleLike}>Tripple Like</button>
+          <span className='ml-2'>{like}</span>
         </p>
         <hr />
 
@@ -77,8 +77,8 @@ function Day2() {
           <button onClick={handleToggle}> Toggle</button>
           {toggle &&
             <div className="container">
-              <button onClick={handleCount}> Count</button>
-              <span>{count}</span>
+              <button className='btn btn-info' onClick={handleCount}> Count</button>
+              <span className='ml-2'>{count}</span>
             </div>
           }
           
