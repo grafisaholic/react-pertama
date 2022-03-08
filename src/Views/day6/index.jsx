@@ -1,8 +1,9 @@
-import React, { useReducer, Fragment, createContext } from 'react'
+import React, { useReducer, createContext } from 'react'
 
 import './style.css'
 import ComponentA from './component/componentA';
 import ComponentB from './component/componentB';
+import Table from './component/Table';
 
 // declare useContext
 export const CountContext = createContext()
@@ -67,6 +68,11 @@ export default function ConterOne() {
         <ComponentA />
         <br />
         <ComponentB />
+      </div>
+
+      <div className='container mt-5'>
+        <h3 className={`mb-3 title`}>useState vs useReducer</h3>
+        <Table />
       </div>
     </CountContext.Provider>
   )
